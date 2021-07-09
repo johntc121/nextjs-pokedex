@@ -1,4 +1,4 @@
-import Link from 'next/Link';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 
 export default function Home({pokemon}) {
@@ -30,7 +30,7 @@ export default function Home({pokemon}) {
 
 export async function getStaticProps(context) {
   try {
-      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=3'); //https://pokeapi.co/api/v2/pokemon?offset=1&limit=3
+      const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=149'); //https://pokeapi.co/api/v2/pokemon?offset=1&limit=3
       const { results } = await res.json();
       console.log(results);
       const pokemon = results.map((pokeman, index) => {
